@@ -1,6 +1,10 @@
 FIRST_PARAM=$1
+
+set -e #stops execution when error occurs
+trap 'echo "Error in the line $LINENO"' ERR #output the error
+
 if [[ $# -lt 1 ]]; then 
-    echo "command should contain at least one parameter"
+    eho "command should contain at least one parameter"
     exit 1
 else 
     echo "First parameter is $FIRST_PARAM"
