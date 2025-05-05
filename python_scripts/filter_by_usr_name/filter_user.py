@@ -1,7 +1,12 @@
-#Usage: pass the username as the first command-line argument
+#Usage: python script.py --name username
 
-import sys
-username = sys.argv[1]
+import argparse
+
+parser = argparse.ArgumentParser(description="Filter lines by username")
+parser.add_argument("--name", required=True, help="Username to search for")
+args = parser.parse_args();
+
+username = args.name
 
 with open("users.txt", "r") as fin, open(f"{username}_lines.txt", "w") as fout:
     for line in fin:
