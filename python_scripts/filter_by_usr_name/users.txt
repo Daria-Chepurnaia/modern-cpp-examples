@@ -1,0 +1,5 @@
+Login: daria - success
+Login: bob - fail
+Login: daria - failed attempt
+User: alice - disconnected
+Login: daria - success
